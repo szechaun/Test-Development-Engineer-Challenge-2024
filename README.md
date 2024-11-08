@@ -70,12 +70,10 @@ Implement automated testing that:
    - Test coverage completeness
    - Edge case handling
    - Clear test organization
-   - Effective assertions
 
 2. CI/CD Implementation (30%)
    - GitHub Actions configuration
    - Automation setup
-   - Pipeline reliability
 
 3. Code Quality (20%)
    - Clean, documented code
@@ -88,7 +86,13 @@ If time permits, consider implementing:
 - Performance testing
 - Mobile responsiveness testing
 
+## Submission
+
+Please submit your GitHub repository link to the word document.
+Additionally, please keep your repository private and invite `Tom-Dynamsoft` and `felixindynamsoft` as a collaborator!
+
 ## Questions?
+
 For any questions about the challenge requirements, please create an issue in this repository.
 
 Good luck!
