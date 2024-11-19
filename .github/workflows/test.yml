@@ -1,0 +1,40 @@
+name: CI Test Workflow
+
+on:
+  push:
+    branches:
+      - "**" # Run on all branches
+  pull_request:
+    branches:
+      - main # Run on PRs to the main branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run tests
+      - name: Run Cypress tests
+        run: npx cypress run
+
+      # Step 5: Upload test results (optional, for debugging failed tests)
+      - name: Upload test artifacts
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-results
+          path: cypress/screenshots
